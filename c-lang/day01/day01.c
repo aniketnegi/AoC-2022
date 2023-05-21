@@ -46,12 +46,17 @@ int main(int argc, char **argv) {
 
   qsort(calories, count, sizeof(calories[0]), compare_reverse);
 
+  // Part One
+  fprintf(stdout, "The Elf with the max Calories has %d Calories in his bag.\n",
+          calories[0]);
+
+  // Part Two
   int ans_sum = 0;
   for (int i = 0; i < atoi(argv[2]); i++) {
     ans_sum += calories[i];
   }
-
-  fprintf(stdout, "The Elf with the max Calories has %d Calories in his bag.\n",
+  fprintf(stdout,
+          "The elves with the top 3 most Calories have %d calories in total.\n",
           ans_sum);
 
   fclose(file);
